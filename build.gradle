@@ -64,6 +64,12 @@ subprojects {
     test {
         useJUnitPlatform()
     }
+
+    javadoc.options {
+        use = true
+        author = true
+        version = true
+    }
 }
 
 
