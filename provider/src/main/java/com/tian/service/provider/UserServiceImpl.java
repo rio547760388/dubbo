@@ -1,6 +1,7 @@
 package com.tian.service.provider;
 
 import com.tian.service.UserService;
+import lombok.extern.slf4j.Slf4j;
 import org.apache.dubbo.config.annotation.Service;
 import org.springframework.beans.factory.annotation.Value;
 
@@ -8,6 +9,7 @@ import org.springframework.beans.factory.annotation.Value;
  * @author ﻿rio
  * @since 2020/5/1
  */
+@Slf4j
 @Service(/*version = "1.0"*/)
 public class UserServiceImpl implements UserService {
 
@@ -16,6 +18,7 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public String getUserById(Long id) {
+        log.info("新请求：{}", id);
         return "Hello dubbo " + id;
     }
 
