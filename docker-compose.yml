@@ -1,0 +1,28 @@
+version: "3.0"
+services:
+  provider:
+    build: ./provider
+    hostname: provider
+    ports:
+      - "2333:2333"
+    volumes:
+      - /tmp:/tmp
+    depends_on:
+      - zk
+  consumer:
+    build: ./consumer
+    hostname: consumer
+    ports:
+    - "8888:8888"
+    volumes:
+    - /tmp:/tmp
+    depends_on:
+      - zk
+      - provider
+  zk:
+    image: "zookeeper:3.4.10"
+    hostname: zkServer
+    ports:
+    - "2181:2181"
+    - "2888:2888"
+    - "3888:3888"

@@ -4,8 +4,8 @@ spring:
 dubbo:
   protocol:
     name: dubbo
-    port: -1
+    port: 2333
   registry:
-    address: zookeeper://127.0.0.1:2181
+    address: zookeeper://zk:2181 #zk docker-compose中service
 
 

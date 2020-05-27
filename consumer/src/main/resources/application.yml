@@ -5,6 +5,6 @@ spring:
     name: dubbo-consumer
 dubbo:
   registry:
-    address: zookeeper://127.0.0.1:2181
+    address: zookeeper://zk:2181 #zk docker-compose中service
   consumer:
     loadbalance: random
