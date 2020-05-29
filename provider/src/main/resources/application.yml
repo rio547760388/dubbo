@@ -7,5 +7,8 @@ dubbo:
     port: 2333
   registry:
     address: zookeeper://zk:2181 #zk docker-compose中service
+logging:
+  file:
+    name: /tmp/provider.log
 
 
