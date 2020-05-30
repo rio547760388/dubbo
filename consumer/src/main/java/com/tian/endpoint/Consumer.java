@@ -15,7 +15,9 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class Consumer {
 
-    @Reference(/*version = "1.0", lazy = true, check = false, url = "dubbo://172.18.91.177:8080"*/)
+    @Reference(/*version = "1.0", lazy = true, check = false, url = "dubbo://172.18.91.177:8080"*/
+        loadbalance = "roundrobin"
+    )
     private UserService userService;
 
     @GetMapping("index")

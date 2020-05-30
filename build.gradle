@@ -40,20 +40,12 @@ subprojects {
         implementation 'com.google.guava:guava:28.0-jre'
         implementation('org.apache.dubbo:dubbo:2.7.6')
 
-        implementation('org.apache.zookeeper:zookeeper:3.4.10') {
-            exclude group: 'log4j'
-            exclude group: 'org.slf4j'
-        }
+        //Zookeeper 所有的典型应用场景的实现（除了两阶段提交外） ，该组件依赖 Client 和 Framework 。
+        //包括 监听、各种分布式锁（可重入锁、排他锁、共享锁、信号锁等）、缓存、队列、选举、分布式 atomic（分布式计数器）、分布式Barrier 等等。
+        implementation('org.apache.curator:curator-recipes:4.3.0')
 
-        // https://mvnrepository.com/artifact/org.apache.curator/curator-recipes
-        implementation('org.apache.curator:curator-recipes:4.3.0') {
-            exclude group: 'org.apache.zookeeper', module: 'zookeeper'
-        }
-
-        // https://mvnrepository.com/artifact/org.apache.curator/curator-framework
-        implementation('org.apache.curator:curator-framework:4.3.0') {
-            exclude group: 'org.apache.zookeeper', module: 'zookeeper'
-        }
+        //简化 Zookeeper 高级功能的使用，并增加了一些新的功能，比如 Zookeeper 集群连接、重试等。
+        implementation('org.apache.curator:curator-framework:4.3.0')
 
         annotationProcessor 'org.projectlombok:lombok:1.18.12'
         compileOnly 'org.projectlombok:lombok:1.18.12'

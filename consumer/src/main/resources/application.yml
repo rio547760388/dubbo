@@ -8,6 +8,6 @@ dubbo:
     address: zookeeper://zk:2181 #zk docker-compose中service
   consumer:
     loadbalance: random
-logging:
-  file:
-    name: /tmp/consumer.log
+#logging:
+#  file:
+#    name: /tmp/consumer.log

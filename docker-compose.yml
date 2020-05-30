@@ -4,8 +4,8 @@ services:
     build: ./provider
     hostname: provider
     container_name: dubbo_prov
-    ports:
-      - "2333:2333"
+#    ports:
+#      - "2333"
     volumes:
       - /tmp:/tmp
     depends_on:
@@ -15,17 +15,17 @@ services:
     hostname: consumer
     container_name: dubbo_cons
     ports:
-    - "8888:8888"
+    - "80:8888"
     volumes:
     - /tmp:/tmp
     depends_on:
       - zk
       - provider
   zk:
-    image: "zookeeper:3.4.10"
+    image: "zookeeper"
     hostname: zkServer
     container_name: zkServer
-    ports:
-    - "2181:2181"
-    - "2888:2888"
-    - "3888:3888"
+#    ports:
+#    - "2181"
+#    - "2888"
+#    - "3888"
