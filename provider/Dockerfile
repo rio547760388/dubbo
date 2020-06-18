@@ -1,4 +1,4 @@
-FROM java:8
+FROM openjdk:8u171-jdk-alpine
 WORKDIR /usr/local
 COPY ./build/libs/provider-1.0.0.jar Dockerfile ./
 VOLUME /tmp

@@ -1,6 +1,8 @@
 spring:
   application:
     name: dubbo-provider
+  rabbitmq:
+    addresses: amqp://rabbit:5672
 dubbo:
   protocol:
     name: dubbo
@@ -10,5 +12,7 @@ dubbo:
 #logging:
 #  file:
 #    name: /tmp/provider.log
-
-
+order:
+  receive:
+    exchange: ordernew
+    routingkey: coming

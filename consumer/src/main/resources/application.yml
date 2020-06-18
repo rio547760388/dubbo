@@ -3,6 +3,8 @@ server:
 spring:
   application:
     name: dubbo-consumer
+  rabbitmq:
+    addresses: amqp://rabbit:5672
 dubbo:
   registry:
     address: zookeeper://zk:2181 #zk docker-compose中service
@@ -11,3 +13,8 @@ dubbo:
 #logging:
 #  file:
 #    name: /tmp/consumer.log
+
+order:
+  receive:
+    exchange: ordernew
+    routingkey: coming

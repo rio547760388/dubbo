@@ -10,6 +10,7 @@ services:
       - /tmp:/tmp
     depends_on:
       - zk
+      - rabbit
   consumer:
     build: ./consumer
     hostname: consumer
@@ -20,6 +21,7 @@ services:
     - /tmp:/tmp
     depends_on:
       - zk
+      - rabbit
       - provider
   zk:
     image: "zookeeper"
@@ -29,3 +31,7 @@ services:
 #    - "2181"
 #    - "2888"
 #    - "3888"
+  rabbit:
+    image: "rabbitmq:latest"
+    hostname: rabbit
+    container_name: rabbitmq

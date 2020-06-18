@@ -4,11 +4,13 @@
 package com.tian;
 
 import org.apache.dubbo.config.spring.context.annotation.EnableDubbo;
+import org.springframework.amqp.rabbit.annotation.EnableRabbit;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
 @EnableDubbo(scanBasePackages = {"com.tian.service.provider"})
+@EnableRabbit
 public class App {
 
     public static void main(String[] args) {

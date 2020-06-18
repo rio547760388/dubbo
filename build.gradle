@@ -34,6 +34,8 @@ subprojects {
         //springboot core
         implementation('org.springframework.boot:spring-boot-starter')
 
+        implementation 'org.springframework.boot:spring-boot-starter-amqp'
+
         implementation('org.apache.dubbo:dubbo-spring-boot-starter:2.7.6')
 
         // This dependency is used by the application.
